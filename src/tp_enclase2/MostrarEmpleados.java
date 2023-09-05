@@ -52,12 +52,24 @@ public class MostrarEmpleados extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
         jcSeleccionar = new javax.swing.JComboBox<>();
 
-        setBackground(new java.awt.Color(153, 153, 153));
+        setBackground(new java.awt.Color(153, 204, 255));
+        setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         setClosable(true);
-        setForeground(java.awt.Color.lightGray);
+        setForeground(new java.awt.Color(102, 204, 255));
+        setIconifiable(true);
+        setMaximizable(true);
+        setResizable(true);
+        setTitle("Lista de empleados");
+        setCursor(new java.awt.Cursor(java.awt.Cursor.S_RESIZE_CURSOR));
         setMaximumSize(new java.awt.Dimension(531, 497));
         setMinimumSize(new java.awt.Dimension(531, 497));
         setName(""); // NOI18N
+        try {
+            setSelected(true);
+        } catch (java.beans.PropertyVetoException e1) {
+            e1.printStackTrace();
+        }
+        setVisible(true);
 
         jtEmpleados.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jtEmpleados.setModel(new javax.swing.table.DefaultTableModel(
@@ -122,6 +134,8 @@ public class MostrarEmpleados extends javax.swing.JInternalFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48))
         );
+
+        getAccessibleContext().setAccessibleDescription("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

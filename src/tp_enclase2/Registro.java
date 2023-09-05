@@ -35,7 +35,16 @@ public class Registro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Escritorio = new javax.swing.JDesktopPane();
+        ImageIcon icon=new ImageIcon(getClass().getResource("/img/fondo.jpg")); Image img=icon.getImage();
+        Escritorio = new javax.swing.JDesktopPane(){
+
+            public void paintComponent(Graphics g){
+
+                g.drawImage(img, 0,0, getWidth(), 
+                    getHeight(), this);
+
+            }
+        };
         jpEmpresa = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -83,8 +92,8 @@ public class Registro extends javax.swing.JFrame {
 
         jpEmpresa.setBackground(new java.awt.Color(0, 51, 51));
         jpEmpresa.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jpEmpresa.setMaximumSize(new java.awt.Dimension(328, 244));
-        jpEmpresa.setMinimumSize(new java.awt.Dimension(328, 244));
+        jpEmpresa.setMaximumSize(null);
+        jpEmpresa.setMinimumSize(null);
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
@@ -129,7 +138,7 @@ public class Registro extends javax.swing.JFrame {
                     .addGroup(jpEmpresaLayout.createSequentialGroup()
                         .addGap(112, 112, 112)
                         .addComponent(jbCrear)))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpEmpresaLayout.setVerticalGroup(
             jpEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -152,7 +161,7 @@ public class Registro extends javax.swing.JFrame {
         jpDatos.setBackground(new java.awt.Color(0, 153, 153));
         jpDatos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jpDatos.setMaximumSize(new java.awt.Dimension(367, 524));
-        jpDatos.setMinimumSize(new java.awt.Dimension(367, 524));
+        jpDatos.setMinimumSize(new java.awt.Dimension(367, 400));
 
         jLabel4.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         jLabel4.setText("Ingrese Datos");
@@ -227,7 +236,7 @@ public class Registro extends javax.swing.JFrame {
                     .addComponent(jcCategoria, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jtSueldo)
                     .addComponent(jcEmpresa, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
         jpDatosLayout.setVerticalGroup(
             jpDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -296,8 +305,8 @@ public class Registro extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jpDatos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jpEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jpDatos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jpEmpresa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Escritorio)
                 .addContainerGap())
@@ -305,14 +314,15 @@ public class Registro extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(Escritorio, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addContainerGap()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Escritorio)
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jpEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jpDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jpDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         pack();
